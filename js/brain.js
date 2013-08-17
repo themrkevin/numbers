@@ -46,6 +46,27 @@ function isFibonacci(n) {
 	}
 }
 /**
+ *	Checks to see if our number
+ *	is a Prime number
+ **/
+function isPrime(n) {
+	// prime numbers must be greater than 1
+	if(n <= 1) return false;
+	// we know 2, 3, & 5 are prime numbers
+	if(n == 2 || n == 3 || n == 5) return true;
+	// even numbers can't be prime (except 2)
+	// and at this point if you're divisible by 3 or 5 you're not 3 or 5 so you can't be prime
+	if(n%2 == 0 || n%3 == 0 || n%5 == 0) return false;
+	// test the left overs (i think this should work)
+	for(i=5;i<n;i++) {
+		if(n%i == 0) {
+			return false;
+		} else {
+			return true;
+		}	
+	}
+}
+/**
  *	Run all tests
  **/
 function willItBlend(n) {
@@ -60,6 +81,11 @@ function willItBlend(n) {
 		result += '<br /> is part of the Fibonacci Sequence';
 	} else {
 		result += '<br /> is NOT part of the Fibonacci Sequence';
+	}
+	if(isPrime(n)) {
+		result += '<br /> is a Prime number';
+	} else {
+		result += '<br /> is NOT a Prime number';
 	}
 	return result;
 }
