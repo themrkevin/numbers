@@ -70,22 +70,23 @@ function isPrime(n) {
  *	Run all tests
  **/
 function willItBlend(n) {
-	var result;
+	var result,
+		split = '<br /> ';
 	if(nValid(n)) {
-		result = 'the number ' + n + '... ';
+		result = 'The number ' + n + '... ';
 	} else {
-		result = 'that is NOT a number';
+		result = 'That is NOT a number. No no no... not in my house!';
 		return result;
 	}
 	if(isFibonacci(n)) {
-		result += '<br /> is part of the Fibonacci Sequence';
+		result += split + 'is part of the Fibonacci Sequence';
 	} else {
-		result += '<br /> is NOT part of the Fibonacci Sequence';
+		result += split + 'is NOT part of the Fibonacci Sequence';
 	}
 	if(isPrime(n)) {
-		result += '<br /> is a Prime number';
+		result += split + 'is a Prime number';
 	} else {
-		result += '<br /> is NOT a Prime number';
+		result += split + 'is NOT a Prime number';
 	}
 	return result;
 }
