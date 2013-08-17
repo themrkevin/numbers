@@ -50,8 +50,8 @@ function isFibonacci(n) {
  *	is a Prime number
  **/
 function isPrime(n) {
-	// prime numbers must be greater than 1
-	if(n <= 1) return false;
+	// prime numbers must be greater than 1 and are whole numbers
+	if(n <= 1 || n % 1 != 0) return false;
 	// we know 2, 3, & 5 are prime numbers
 	if(n == 2 || n == 3 || n == 5) return true;
 	// even numbers can't be prime (except 2)
