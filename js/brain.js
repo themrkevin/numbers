@@ -4,10 +4,10 @@
  **/
 function nValid(n) {
 	if(!isNaN(parseFloat(n)) && isFinite(n)) {
-		console.log(n + ' is a number.');
+		// console.log(n + ' is a number.');
 		return true;
 	} else {
-		console.log(n + ' ...no no no, not in my house!');
+		// console.log(n + ' ...no no no, not in my house!');
 		return false;
 	}
 }
@@ -36,17 +36,34 @@ function fibonacci(n) {
  *	is part of the Fibonacci Sequence
  **/
 function isFibonacci(n) {
-	if( nValid(n) ) {
-		// '==' because in this case we don't want to be so strict
-		if( fibonacci(n) == n) {
-			// console.log(n + ' is part of the Fibonacci Sequence');
-			return true;
-		} else {
-			// console.log(n + ' is NOT part of the Fibonacci Sequence');
-			return false;
-		}
+	// '==' because in this case we don't want to be so strict
+	if(fibonacci(n) == n) {
+		// console.log(n + ' is part of the Fibonacci Sequence');
+		return true;
+	} else {
+		// console.log(n + ' is NOT part of the Fibonacci Sequence');
+		return false;
 	}
 }
+/**
+ *	Run all tests
+ **/
+function willItBlend(n) {
+	var result;
+	if(nValid(n)) {
+		result = 'the number ' + n + '... ';
+	} else {
+		result = 'that is NOT a number';
+		return result;
+	}
+	if(isFibonacci(n)) {
+		result += '<br /> is part of the Fibonacci Sequence';
+	} else {
+		result += '<br /> is NOT part of the Fibonacci Sequence';
+	}
+	return result;
+}
+
 
 
 

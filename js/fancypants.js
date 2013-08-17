@@ -13,13 +13,9 @@
 	koolaid$.on('submit', function() {
 		var that = $(this),
 			number$ = that.find('input[name="number"]').val(),
-			result;
-		if(isFibonacci(number$)) {
-			result = number$ + ' is part of the Fibonacci Sequence';
-		} else {
-			result = number$ + ' is NOT part of the Fibonacci Sequence';
-		}
-		result$.html(result);
+			answer = willItBlend(number$);
+
+		result$.html(answer);
 		return false;
 	});
 }();
