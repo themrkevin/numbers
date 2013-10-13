@@ -12,6 +12,33 @@ function nValid(n) {
 	}
 }
 /**
+ *	Divisors of
+ **/
+function divisorsOf(n) {
+	var divisors = [];
+	for(i=0;i<=n;i++) {
+		if(n%i === 0) {
+			divisors.push(i);
+		}
+	}
+	return divisors;
+}
+/**
+ *	Add up all the divisors
+ *	requires divisorsOf()
+ **/
+function sumOfDivisors(n) {
+	var divisors = divisorsOf(n),
+	l = divisors.length,
+	result = 0;
+
+	// calculates the sum of all divisors
+	for(i=0;i<l;i++) {
+		result += divisors[i];
+	}
+	return result;
+}
+/**
  * Making the Fibonacci Sequence
  **/
 function fibonacci(n) {
@@ -67,6 +94,18 @@ function isPrime(n) {
 	}
 }
 /**
+ *	Perfect number
+ **/
+function isPerfect(n) {
+	// positive int
+	if(n != Math.abs(n)) return false;
+	// is equal to the sum of its positive divisors excluding itself
+	if(n != sumOfDivisors(n)-n) return false;
+	// is equal to half its positive divisors
+	if(n != sumOfDivisors(n)/2) return false;
+	return true;
+}
+/**
  *	Run all tests
  **/
 function willItBlend(n) {
@@ -87,6 +126,11 @@ function willItBlend(n) {
 		result += split + 'is a Prime number';
 	} else {
 		result += split + 'is NOT a Prime number';
+	}
+	if(isPerfect(n)) {
+		result += split + 'is a Perfect number';
+	} else {
+		result += split + 'is NOT a Perfect number';
 	}
 	return result;
 }
