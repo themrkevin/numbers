@@ -94,6 +94,21 @@ function isPrime(n) {
 	}
 }
 /**
+ *	List of primes
+ **/
+function primeList(n) {
+	var primes = [];
+	var i = 0,
+		num;
+
+	for(i;i<n;i++) {
+		if(isPrime(i + 1)) {
+			primes.push(i + 1);
+		}
+	}
+	return primes;
+}
+/**
  *	Perfect number
  **/
 function isPerfect(n) {
@@ -105,11 +120,18 @@ function isPerfect(n) {
 	if(n != sumOfDivisors(n)/2) return false;
 	return true;
 }
-
-
-
-
-
+/**
+ *	Lucky number
+ **/
+// function isLucky(n) {
+// 	// build array
+// 	var lucky = [];
+// 	var i = 1;
+// 	for(i;i<=n;i++) {
+// 		lucky.push(i);
+// 	}
+// 	console.log('Building array:',lucky);
+// }
 /**
  *	Run all tests
  **/
