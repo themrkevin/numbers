@@ -105,6 +105,11 @@ function isPerfect(n) {
 	if(n != sumOfDivisors(n)/2) return false;
 	return true;
 }
+
+
+
+
+
 /**
  *	Run all tests
  **/
